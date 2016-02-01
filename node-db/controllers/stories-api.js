@@ -18,7 +18,7 @@ module.exports.Router = function(Story) {
         //insert a new story into the database
         //and return the data with default values
         //applied
-        res.json({}); 
+        res.json({});
     });
     
     router.post('/stories/:id/votes', function(req, res, next) {

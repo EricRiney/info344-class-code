@@ -83,12 +83,12 @@ app.use(session({
 app.use(session({
     secret: cookieSigSecret,
     resave: false,
->>>>>>> f98e48d0e9bbec76c1776e94553d9fdcc7221f3a
+
     saveUninitialized: false,
     store: new RedisStore()
 }));
 
-<<<<<<< HEAD
+
 passport.use(gitHubStrategy);
 passport.serializeUser(function(user, done) {
    done(null, user); 
@@ -122,7 +122,7 @@ app.use(express.static(__dirname + '/static/secure'));
 app.listen(80, function() {
    console.log('Server is listening...'); 
 });
-=======
+
 //tell passport to use the GitHub strategy
 //you can use as many strategies as you want
 //to support multiple ways to authenticate
@@ -188,4 +188,4 @@ app.get('/api/v1/users/me', function(req,res) {
 app.listen(80, function() {
     console.log('server is listening...');
 });
->>>>>>> f98e48d0e9bbec76c1776e94553d9fdcc7221f3a
+

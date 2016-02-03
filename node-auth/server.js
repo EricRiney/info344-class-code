@@ -26,7 +26,7 @@ var gitHubStrategy = new GitHubStrategy(gitHubConFig,
 var cookieSigSecret = process.env.COOKIE_SIG_SECRET;
 if (!cookieSigSecret) {
     console.error('Plese fix');
-=======
+
 var GitHubStrategy = require('passport-github').Strategy;
 
 //load GitHubStratey configuration
@@ -178,6 +178,11 @@ app.use(function(req, res, next) {
 //is added after the check above, express will never call it
 //if the function above doesn't call next()
 app.use(express.static(__dirname + '/static/secure'));
+
+app.get('/api/v1/users/me', function(req,res) {
+    //req.user is the currently autheniicated user
+    res.json(req.user);
+})
 
 //start the server
 app.listen(80, function() {
